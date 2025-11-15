@@ -3,7 +3,6 @@ title: "Assignment"
 output: html_document
 date: "2025-11-12"
 ---
-
 ## 1. 
 Write a function to calculate the standard deviation from the population variance of
 the dataset `pressure`, for the field `pressure`. Display the output along with the values
@@ -33,3 +32,45 @@ calculate_sd_from_var <- function(data, field) {
 # Example usage
 data(pressure)
 calculate_sd_from_var(pressure, "pressure")
+
+
+##2.
+Take the dataset ‘Titanic’. List out the categorical fields and create cross-tabulations
+of Sex vs Survived and Age vs Survived, along with the chi-square proportions and
+row and column totals listed out.
+
+# Load dataset
+data(Titanic)
+
+# Convert to data frame for easier tabulation
+titanic_df <- as.data.frame(Titanic)
+
+# Cross-tabulation: Sex vs Survived
+tab_sex_surv <- xtabs(Freq ~ Sex + Survived, data = titanic_df)
+tab_sex_surv
+
+# Add row and column totals
+addmargins(tab_sex_surv)
+
+# Chi-square test
+chi_sex_surv <- chisq.test(tab_sex_surv)
+chi_sex_surv
+
+# Chi-square proportions (expected proportions)
+chi_sex_surv$expected
+
+# Cross-tabulation: Age vs Survived
+tab_age_surv <- xtabs(Freq ~ Age + Survived, data = titanic_df)
+tab_age_surv
+
+# Add row and column totals
+addmargins(tab_age_surv)
+
+# Chi-square test
+chi_age_surv <- chisq.test(tab_age_surv)
+chi_age_surv
+
+# Expected proportions
+chi_age_surv$expected
+
+
