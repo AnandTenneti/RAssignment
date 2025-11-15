@@ -73,8 +73,26 @@ chi_age_surv
 chi_age_surv$expected
 
 ## 3.
-Differentiate between sample and population variance, along with examples and a
-demonstration with an actual dataset.
+  Differentiate between sample and population variance, along with examples and a
+  demonstration with an actual dataset.
+  # Load dataset
+data(pressure)
+
+# View first few records
+head(pressure)
+
+# Extract the pressure field
+values <- pressure$pressure
+
+# Calculate population variance (divide by N)
+population_variance <- sum((values - mean(values))^2) / length(values)
+
+# Calculate sample variance (default in R uses n - 1)
+sample_variance <- var(values)
+
+population_variance
+sample_variance
+
 
 ## 4.
 A dataset has a field with numeric values from 1 to 12, representing months
