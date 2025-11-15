@@ -1,0 +1,35 @@
+---
+title: "Assignment"
+output: html_document
+date: "2025-11-12"
+---
+
+## 1. 
+Write a function to calculate the standard deviation from the population variance of
+the dataset `pressure`, for the field `pressure`. Display the output along with the values
+of this field.
+
+```{r calculate-sd-from-var, echo=TRUE}
+calculate_sd_from_var <- function(data, field) {
+  values <- data[[field]]
+  
+  # Calculate population variance
+  pop_variance <- sum((values - mean(values))^2) / length(values)
+  
+  # Calculate population standard deviation
+  pop_sd <- sqrt(pop_variance)
+  
+  # Display results
+  cat("Field:", field, "\n")
+  cat("Values:\n")
+  print(values)
+  cat("\nPopulation Variance:", pop_variance, "\n")
+  cat("Standard Deviation (from population variance):", pop_sd, "\n")
+  
+  # Return SD value
+  return(pop_sd)
+}
+
+# Example usage
+data(pressure)
+calculate_sd_from_var(pressure, "pressure")
