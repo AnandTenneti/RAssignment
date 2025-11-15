@@ -9,7 +9,7 @@ the dataset `pressure`, for the field `pressure`. Display the output along with 
 of this field.
 
 ```{r calculate-sd-from-var, echo=TRUE}
-calculate_sd_from_var <- function(data, field) {
+  calculate_sd_from_var <- function(data, field) {
   values <- data[[field]]
   
   # Calculate population variance
@@ -41,57 +41,58 @@ row and column totals listed out.
 
 # Load and prepare dataset
 ```{r titanic_setup}
-data(Titanic)
-titanic_df <- as.data.frame(Titanic)
+  data(Titanic)
+  titanic_df <- as.data.frame(Titanic)
 ```
 # Cross-tabulation: Sex vs Survived
-tab_sex_surv <- xtabs(Freq ~ Sex + Survived, data = titanic_df)
-tab_sex_surv
+  tab_sex_surv <- xtabs(Freq ~ Sex + Survived, data = titanic_df)
+  tab_sex_surv
 
 # Add row and column totals
-addmargins(tab_sex_surv)
+  addmargins(tab_sex_surv)
 
 # Chi-square test
-chi_sex_surv <- chisq.test(tab_sex_surv)
-chi_sex_surv
+  chi_sex_surv <- chisq.test(tab_sex_surv)
+  chi_sex_surv
 
 # Chi-square proportions (expected proportions)
-chi_sex_surv$expected
+  chi_sex_surv$expected
 
 # Cross-tabulation: Age vs Survived
-tab_age_surv <- xtabs(Freq ~ Age + Survived, data = titanic_df)
-tab_age_surv
+  tab_age_surv <- xtabs(Freq ~ Age + Survived, data = titanic_df)
+  tab_age_surv
 
 # Add row and column totals
-addmargins(tab_age_surv)
+  addmargins(tab_age_surv)
 
 # Chi-square test
-chi_age_surv <- chisq.test(tab_age_surv)
-chi_age_surv
+  chi_age_surv <- chisq.test(tab_age_surv)
+  chi_age_surv
 
 # Expected proportions
-chi_age_surv$expected
+  chi_age_surv$expected
 
 ## 3.
   Differentiate between sample and population variance, along with examples and a
   demonstration with an actual dataset.
+
   # Load dataset
-data(pressure)
+  data(pressure)
 
-# View first few records
-head(pressure)
+  # View first few records
+  head(pressure)
 
-# Extract the pressure field
-values <- pressure$pressure
+  # Extract the pressure field
+  values <- pressure$pressure
 
-# Calculate population variance (divide by N)
-population_variance <- sum((values - mean(values))^2) / length(values)
+  # Calculate population variance (divide by N)
+  population_variance <- sum((values - mean(values))^2) / length(values)
 
-# Calculate sample variance (default in R uses n - 1)
-sample_variance <- var(values)
+  # Calculate sample variance (default in R uses n - 1)
+  sample_variance <- var(values)
 
-population_variance
-sample_variance
+  population_variance
+  sample_variance
 
 
 ## 4.
