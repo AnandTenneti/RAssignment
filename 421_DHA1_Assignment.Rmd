@@ -98,6 +98,18 @@ sample_variance
 A dataset has a field with numeric values from 1 to 12, representing months
 a. How would you convert this to a factor? Ensure that the months are in order
 and their numeric value corresponds to their order.
+# Suppose your numeric month field is:
+month_num <- 1:12   # or your dataset$field
+
+# Convert to an ordered factor
+month_factor <- factor(
+  month_num,
+  levels = 1:12,                     # ensures correct order
+  labels = month.name,               # "January", "February", ...
+  ordered = TRUE                     # makes it an ordered factor
+)
+
+month_factor
 b. How would converting this into a factor change the type of analysis possible?
 c. What are the differences between treating it as a factor vs treating it as a
 numeric field?
