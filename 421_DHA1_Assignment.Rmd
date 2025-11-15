@@ -116,8 +116,9 @@ b. How would converting this into a factor change the type of analysis possible?
    and plots.
 c. What are the differences between treating it as a factor vs treating it as a
 numeric field?
-  When treated as a numeric variable, months are interpreted as continuous values, which permits arithmetic operations and linear modelling but<br>        wrongly implies that equal numerical spacing carries meaningful quantitative differences. In contrast, representing months as a factor treats<br>
-  them as discrete categorical groups, enabling appropriate categorical analyses such as ANOVA or chi-square tests, while also preventing<br>              inappropriate numerical computations.
+  When treated as a numeric variable, months are interpreted as continuous values, which permits arithmetic operations and linear modelling but wrongly 
+  implies that equal numerical spacing carries meaningful quantitative differences. In contrast, representing months as a factor treats
+  them as discrete categorical groups, enabling appropriate categorical analyses such as ANOVA or chi-square tests, while also preventing inappropriate numerical           computations.
 
 
 ## 5.
