@@ -34,7 +34,7 @@ data(pressure)
 calculate_sd_from_var(pressure, "pressure")
 
 
-##2.
+## 2.
 Take the dataset ‘Titanic’. List out the categorical fields and create cross-tabulations
 of Sex vs Survived and Age vs Survived, along with the chi-square proportions and
 row and column totals listed out.
@@ -72,5 +72,9 @@ chi_age_surv
 
 # Expected proportions
 chi_age_surv$expected
+
+## 3.
+Differentiate between sample and population variance, along with examples and a
+demonstration with an actual dataset.
 
 
