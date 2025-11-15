@@ -76,4 +76,30 @@ chi_age_surv$expected
 Differentiate between sample and population variance, along with examples and a
 demonstration with an actual dataset.
 
+## 4.
+A dataset has a field with numeric values from 1 to 12, representing months
+a. How would you convert this to a factor? Ensure that the months are in order
+and their numeric value corresponds to their order.
+b. How would converting this into a factor change the type of analysis possible?
+c. What are the differences between treating it as a factor vs treating it as a
+numeric field?
 
+
+## 5.
+An array X has dimensions (region × gender × year), representing average
+income. What does the following calculate:
+apply(X, 3, function(x) max(x) - min(x))
+What would be the dimensions of this output? Write a program to perform the same
+without apply() or any of its variants.
+
+## 6.
+From the table given below, construct a file called sales_data.csv. Next, read the file
+sales_data.csv and write a function called check_sales_data(data) which does the
+following:
+a. Type checks each field and cleans up/converts it appropriately. Delete the row
+if “Quantity” or “Unit_Price” is missing; otherwise, leave the field blank. Print
+an error message every time an issue is encountered.
+b. Store Quantity * Unit_Price in a new column called “Total_Sale”.
+c. If the total sale is greater than $50,000, label it as “High Value”; otherwise,
+label it as “Regular”. Save this in a new column called “Category”.
+Write this new dataset into an XLSX file. Submit the code and the resulting XLSX file.
