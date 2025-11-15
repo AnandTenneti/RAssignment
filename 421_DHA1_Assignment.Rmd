@@ -32,19 +32,18 @@ calculate_sd_from_var <- function(data, field) {
 # Example usage
 data(pressure)
 calculate_sd_from_var(pressure, "pressure")
-
+```
 
 ## 2.
 Take the dataset ‘Titanic’. List out the categorical fields and create cross-tabulations
 of Sex vs Survived and Age vs Survived, along with the chi-square proportions and
 row and column totals listed out.
 
-# Load dataset
+# Load and prepare dataset
+```{r titanic_setup}
 data(Titanic)
-
-# Convert to data frame for easier tabulation
 titanic_df <- as.data.frame(Titanic)
-
+```
 # Cross-tabulation: Sex vs Survived
 tab_sex_surv <- xtabs(Freq ~ Sex + Survived, data = titanic_df)
 tab_sex_surv
